@@ -1,0 +1,419 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; /* Vertically center items */
+    padding: 20px 40px; /* Add spacing around the header */
+    background-color: rgba(8, 8, 8, 0.5); /* Transparent background with color */
+    color: white; /* Text color */
+    position: fixed; /* Fix header at the top */
+    width: 100%; /* Full width */
+    height: 10vh;
+    top: 0; /* Stick it to the top */
+    z-index: 10; /* Ensure it stays above other content */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+}
+
+.SiteName{
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    padding-left: 10px;
+}
+
+nav{
+    margin-left: auto;
+    list-style: none;
+}
+
+nav ul{
+    float: right;
+    margin-right: 10px;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 5px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 20px 32px;
+    border-radius: 8px;
+    backdrop-filter: blur(20px);
+    position: relative; /* Add this line */
+}
+
+nav ul li a::after {
+    content: ''; /* Create an empty content */
+    position: absolute; /* Position the pseudo-element */
+    bottom: 0;
+    left: 0;
+    width: 0; /* Initially set the width to 0 */
+    height: 3px; /* Height of the underline */
+    background-color: #FFC700; /* Color of the underline */
+    transition: width 0.3s ease; /* Smooth transition for the underline width */
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* Set the width to 100% on hover */
+}
+
+
+.first{
+    background-image: linear-gradient(rgba(22, 22, 22, 0.5), rgba(27, 27, 27, 0.5)), url(images/Calaguas1.png);
+    height: 800px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-color: rgb(0, 0, 0);
+    justify-content: center;
+}
+
+.motto {
+    font-family: "Allison", cursive;
+    font-size: 230px;
+    color: #FFC700;
+    font-weight: 400;
+    font-style: normal;
+    padding-top: 260px;
+    padding-left: 80px;
+    text-shadow: 3px 4px 3px black;
+}
+
+.motto2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 250px;
+    color: #ffffff;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: -130px;
+    margin-left: 50px;
+    text-shadow: 3px 4px 3px black;
+}
+
+.explore-link {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    position: absolute;
+    bottom: 60px; 
+    right: 40px; 
+    text-decoration: none;
+    color: inherit; 
+}
+
+.explore-image {
+    width: 70px;
+    height: auto;
+    cursor: pointer; 
+    margin-right: 10px; 
+}
+
+.explore {
+    font-family: "Montserrat", sans-serif;
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+.second{
+    background: linear-gradient(to bottom, rgb(62, 173, 174), rgb(200, 191, 175));
+    height: 800px; 
+    width: 100%;
+}
+
+.mustexplore {
+    font-family: "Allison", cursive;
+    font-size: 70px;
+    color: #FFC700;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    padding-top: 80px; 
+    text-shadow: 2px 3px 2px black;
+}
+
+.gems {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 35px;
+    color: #000000;
+    font-weight: 400;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    margin-top: -15px;
+}
+
+/* Container for the flip-card gallery */
+.exploregallery {
+    width: 85vw;
+    display: flex;
+    flex-wrap: wrap; /* Enables wrapping to the next line */
+    gap: 10px; /* Space between images */
+    justify-content: center; /* Center-align the rows */
+    margin: 30px auto; /* Centers the entire gallery horizontally */
+    cursor: pointer;
+}
+
+/* Each card within the gallery */
+.flip-card {
+    background-color: transparent;
+    width: 100%; /* Full width of the container */
+    max-width: calc(33.33% - 10px); /* Adjust the card width for 3 per row */
+    height: 200px; /* Adjust height as needed */
+    perspective: 1000px; /* Add perspective for the flip effect */
+    position: relative; /* Ensure positioning works */
+}
+
+/* Flip card inner container */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Flip on hover */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front and back of the card */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+/* Front side styling for image */
+.flip-card-front {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.flip-card-front img {
+    width: 100%; /* Ensure the image fills its container */
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s, opacity 0.5s;
+    border-radius: 15px;
+}
+
+/* Hover effect on image */
+.flip-card-front:hover img {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* Back side styling */
+.flip-card-back {
+    font-family: "Montserrat", sans-serif;
+    background-color: #f8f8f8;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 20px;
+    color: #000000;
+    text-align: center;
+}
+
+/* Image text */
+.image-text {
+    font-family: "Montserrat", sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 3px 2px black;
+    z-index: 2;
+    pointer-events: none; /* Ensure the text doesn't block hover */
+}
+
+/* Show text on hover */
+.flip-card-front:hover .image-text {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+.photo-gallery{
+    background: rgb(200, 191, 175);
+    height: auto; 
+    width: 100%; 
+}
+
+.phototxt{
+    font-family: "Allison", cursive;
+    font-size: 120px;
+    color: rgb(5, 252, 255);
+    font-weight: 400;
+    font-style: normal;
+    text-align: center; /* Centers text horizontally */
+    padding-top: 80px; /* Adds space from the top */
+    text-shadow: 1px 2px 1px black;
+}
+
+.gallerytxt {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 50px;
+    color: #000000;
+    font-weight: 400;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center; /* Centers text horizontally */
+    margin-top: -30px;
+}
+
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+.gallery-item {
+    position: relative;
+    overflow: hidden; /* Hide the parts of the image that exceed the boundaries */
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Darker shadow */
+}
+
+
+
+
+
+.bottompage {
+    position: relative; /* Needed to layer the images */
+    text-align: center;
+    height: 700px;
+    width: 100%;
+    background: linear-gradient(to bottom, rgb(200, 191, 175), rgb(0, 0, 0));
+}
+
+.beigeeffect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto; 
+    z-index: 2;
+}
+
+.wave {
+    width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+    z-index: 1; 
+}
+
+.footer-content {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the content horizontally */
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    z-index: 1;
+}
+
+.social-media {
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.footer-links {
+    margin-bottom: 25px;
+}
+
+.footer-links a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #FFD700; 
+}
+
+.copyright {
+    font-size: 12px;
+    color: #fff;
+}

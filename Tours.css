@@ -1,0 +1,294 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; /* Vertically center items */
+    padding: 20px 40px; /* Add spacing around the header */
+    background-color: rgba(8, 8, 8, 0.5); /* Transparent background with color */
+    color: white; /* Text color */
+    position: fixed; /* Fix header at the top */
+    width: 100%; /* Full width */
+    height: 10vh;
+    top: 0; /* Stick it to the top */
+    z-index: 10; /* Ensure it stays above other content */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+}
+
+.SiteName{
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    padding-left: 10px;
+}
+
+nav{
+    margin-left: auto;
+    list-style: none;
+}
+
+nav ul{
+    float: right;
+    margin-right: 10px;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 5px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 20px 32px;
+    border-radius: 8px;
+    backdrop-filter: blur(20px);
+    position: relative; /* Add this line */
+}
+
+nav ul li a::after {
+    content: ''; /* Create an empty content */
+    position: absolute; /* Position the pseudo-element */
+    bottom: 0;
+    left: 0;
+    width: 0; /* Initially set the width to 0 */
+    height: 3px; /* Height of the underline */
+    background-color: #FFC700; /* Color of the underline */
+    transition: width 0.3s ease; /* Smooth transition for the underline width */
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* Set the width to 100% on hover */
+}
+
+.Tours{
+    background: linear-gradient(to bottom, rgb(62, 173, 174), rgb(200, 191, 175));
+    height: 2990px; 
+    width: 100%;
+    text-align: center;
+}
+
+.tourstitle {
+    font-family: "Allison", cursive;
+    font-size: 150px;
+    color: #FFC700;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    padding-top: 70px; 
+    text-shadow: 2px 3px 2px black;
+}
+
+.tourstitle2 {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 40px;
+    color: #000000;
+    font-weight: 400;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    margin-top: -40px;
+}
+
+.packagename{
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 50px;
+    color: #000000;
+    font-weight:bolder;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.tour-container {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 820px;
+}
+
+.tour-logo img {
+    width: 20%;
+    height: auto;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+.tour-company-name p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.tour-info p {
+    margin: 0;
+}
+
+.tour-duration-price {
+    font-family: "Montserrat", sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.inclusions-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    padding-top: 10px;  /* Adds space above this p */
+}
+
+
+.inclusions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.inclusions p{
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    padding-top: 10px;  /* Adds space above this p */
+}
+.inclusions img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+hr {
+    margin: 20px 0;
+    border: 1px solid #ccc;
+}
+
+.inclusion-details {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    list-style-position: inside; /* Aligns the icon or bullet with text */
+    margin: 0;
+    padding-left: 30px;
+    font-size: 22px;
+    color: #555;
+    line-height: 1.6; /* Improves readability */
+}
+
+.inclusion-details li {
+    margin-bottom: 10px; /* Adds space between items */
+    display: flex;
+    align-items: center;
+}
+
+.contact-link {
+    margin-top: 0;
+    text-align: center;
+}
+
+.contact-link a {
+    text-decoration: none;
+    color: #007bff; /* Use a link color, or adjust to your theme */
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-link a:hover {
+    text-decoration: underline;
+}
+
+.fb-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+}
+
+.bottompage {
+    position: relative; /* Needed to layer the images */
+    text-align: center;
+    height: 700px;
+    width: 100%;
+    background: linear-gradient(to bottom, rgb(200, 191, 175), rgb(0, 0, 0));
+}
+
+.beigeeffect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto; 
+    z-index: 2;
+}
+
+.wave {
+    width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+    z-index: 1; 
+}
+
+.footer-content {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the content horizontally */
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    z-index: 1;
+}
+
+.social-media {
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.footer-links {
+    margin-bottom: 25px;
+}
+
+.footer-links a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #FFD700; 
+}
+
+.copyright {
+    font-size: 12px;
+    color: #fff;
+}
